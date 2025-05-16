@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoring Suhu Kandang Ayam</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://img.icons8.com/color/96/000000/user-male-circle--v2.png" alt="User"/>
+      <span class="name">Dimas</span>
+    </div>
+    <nav>
+      <a href="#" class="nav-link active" data-view="current">Dashboard</a>
+      <a href="#" class="nav-link">Grafik</a>
+    </nav>
+  </div>
+  <div class="main-content">
+    <div class="header">
+      <div class="title">MONITORING SUHU RUANGAN</div>
+      <div class="profile">
+        <img src="https://img.icons8.com/color/96/000000/user-male-circle--v2.png" alt="User"/>
+        <span>Dimas</span>
+      </div>
+    </div>
+    
+    <!-- Current Data View -->
+    <div id="current-view" class="view-section">
+      <div class="cards" id="cards-container">
+        <!-- Kandang akan di-generate oleh JavaScript -->
+      </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Detail Kandang</h2>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="table-container">
+            <table class="detail-table">
+              <thead>
+                <tr>
+                  <th>Suhu</th>
+                  <th>Status</th>
+                  <th>Waktu</th>
+                  <th>Timestamp</th>
+                </tr>
+              </thead>
+              <tbody id="detail-container">
+                <!-- Detail data akan di-generate oleh JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

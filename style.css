@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #f4f7fa;
+}
+.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 250px;
+  background: #1a2327;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.sidebar .profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 20px 10px 20px;
+}
+.sidebar .profile img {
+  width: 50px;
+  border-radius: 50%;
+  background: #fff;
+}
+.sidebar .profile .name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.sidebar nav {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+}
+.sidebar nav a.active, .sidebar nav a:hover {
+  background: #2d425a;
+}
+.main-content {
+  margin-left: 250px;
+  padding: 30px 40px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.header .title {
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header .profile img {
+  width: 35px;
+  border-radius: 50%;
+  background: #fff;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+.card {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 250px;
+  border-radius: 10px;
+  color: #fff;
+  padding: 30px 20px 20px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.card.green { background: #16a085; }
+.card.blue { background: #3498db; }
+.card.red { background: #e74c3c; }
+.card .room {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card .temp {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card .detail {
+  margin-top: 15px;
+  font-size: 1.1em;
+  background: rgba(255,255,255,0.1);
+  padding: 6px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card .detail:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  margin: 50px auto;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.close {
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Detail Table Styles */
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.detail-table th {
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.detail-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.detail-table tr:hover {
+  background: #f5f8fa;
+}
+
+/* Status colors in detail table */
+.status-text {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #fff;
+  display: inline-block;
+}
+
+.status-text.hot {
+  background: #e74c3c;
+}
+
+.status-text.normal {
+  background: #3498db;
+}
+
+.status-text.cold {
+  background: #16a085;
+}
+
+/* Loading and Error states */
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.error {
+  padding: 20px;
+  background: #f8d7da;
+  color: #721c24;
+  text-align: center;
+}
